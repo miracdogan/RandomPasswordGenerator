@@ -9,11 +9,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var textView: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.white
     }
 
+    func generateRandomPassword(of length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var password = ""
+        
+        for _ in 0 ..< length {
+            password.append(letters.randomElement()!)
+        }
+        
+        return password
+            
+    }
+    
+    @IBAction func Create(_ sender: Any) {
+        textView.textAlignment = .center
+        textView.text = generateRandomPassword(of: 20)
+        UIPasteboard.general.string = textView.text
+    }
 
 }
 
