@@ -10,9 +10,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var textView: UITextField!
+    @IBOutlet var CopyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.isUserInteractionEnabled = false
         self.view.backgroundColor = UIColor.white
     }
 
@@ -25,14 +28,20 @@ class ViewController: UIViewController {
         }
         
         return password
-            
     }
     
     @IBAction func Create(_ sender: Any) {
         textView.textAlignment = .center
-        textView.text = generateRandomPassword(of: 20)
+        textView.text = generateRandomPassword(of: 17)
         UIPasteboard.general.string = textView.text
     }
 
+    @IBAction func CopyPassword(_ sender: Any) {
+        UIPasteboard.general.string = textView.text
+        
+        let ac = UIAlertController(title: title, message: "Copied Successfully!", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default))
+        present(ac, animated: true)
+    }
 }
 

@@ -42,6 +42,15 @@
                                     <action selector="Create:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8j0-VE-6Dd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwH-Rm-iwd">
+                                <rect key="frame" x="260" y="421" width="64" height="35"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Copy"/>
+                                <connections>
+                                    <action selector="CopyPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qa-bt-37N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -53,12 +62,15 @@
                             <constraint firstItem="K8f-kS-zw5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="NZ4-cu-uXF"/>
                             <constraint firstItem="fg6-nW-RdY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OV2-6V-wJ1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fg6-nW-RdY" secondAttribute="trailing" constant="50" id="T5p-vu-pf8"/>
+                            <constraint firstItem="JwH-Rm-iwd" firstAttribute="centerY" secondItem="fg6-nW-RdY" secondAttribute="centerY" id="adT-5v-475"/>
                             <constraint firstItem="fg6-nW-RdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="j49-Ex-g3w"/>
+                            <constraint firstItem="JwH-Rm-iwd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="260" id="pBm-mX-dNF"/>
                             <constraint firstItem="0Ws-mr-era" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="tQM-lJ-scw"/>
                             <constraint firstItem="fg6-nW-RdY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zLX-Li-nA2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="CopyButton" destination="JwH-Rm-iwd" id="Idm-C6-Uqz"/>
                         <outlet property="textView" destination="fg6-nW-RdY" id="HlA-eu-mHC"/>
                     </connections>
                 </viewController>
