@@ -30,6 +30,13 @@ class ViewController: UIViewController {
         return password
     }
     
+    
+    @IBAction func NextPageAction(_ sender: Any) {
+        let nameStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = nameStoryBoard.instantiateViewController(withIdentifier: "PasswordViewController")
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func Create(_ sender: Any) {
         textView.textAlignment = .center
         textView.text = generateRandomPassword(of: 17)
