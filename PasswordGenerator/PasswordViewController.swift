@@ -42,7 +42,9 @@ class PasswordViewController: UITableViewController {
     
     @objc func promptForAnswer() {
         let ac = UIAlertController(title: "Enter Password", message: nil, preferredStyle: .alert)
-        ac.addTextField()
+        ac.addTextField { (textField : UITextField!) -> Void in
+                textField.text = UIPasteboard.general.string
+            }
         
         let submitAction = UIAlertAction(title: "Save", style: .default) {
             [weak self, weak ac] _ in
@@ -52,7 +54,7 @@ class PasswordViewController: UITableViewController {
         
         ac.addAction(submitAction)
         present(ac, animated: true)
-        
+
     }
     
     func submit(_ answer: String) {
