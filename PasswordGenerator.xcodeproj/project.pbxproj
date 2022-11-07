@@ -13,6 +13,7 @@
 		7D3CBEC12915946300C224A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3CBEBF2915946300C224A9 /* Main.storyboard */; };
 		7D3CBEC32915946300C224A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D3CBEC22915946300C224A9 /* Assets.xcassets */; };
 		7D3CBEC62915946300C224A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3CBEC42915946300C224A9 /* LaunchScreen.storyboard */; };
+		7D847FAB291990AB0009E3F8 /* PasswordModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D847FA9291990AB0009E3F8 /* PasswordModel.xcdatamodeld */; };
 		7DAC6C032916FCAB00D267F2 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC6C022916FCAB00D267F2 /* PasswordViewController.swift */; };
 		7DAC6C052916FE6900D267F2 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7DAC6C042916FE6900D267F2 /* start.txt */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		7D3CBEC22915946300C224A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D3CBEC52915946300C224A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D3CBEC72915946300C224A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D847FAA291990AB0009E3F8 /* PasswordModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordModel.xcdatamodel; sourceTree = "<group>"; };
 		7DAC6C022916FCAB00D267F2 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		7DAC6C042916FE6900D267F2 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				7D3CBEC42915946300C224A9 /* LaunchScreen.storyboard */,
 				7DAC6C042916FE6900D267F2 /* start.txt */,
 				7D3CBEC72915946300C224A9 /* Info.plist */,
+				7D847FA9291990AB0009E3F8 /* PasswordModel.xcdatamodeld */,
 			);
 			path = PasswordGenerator;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				7DAC6C032916FCAB00D267F2 /* PasswordViewController.swift in Sources */,
 				7D3CBEBA2915946300C224A9 /* AppDelegate.swift in Sources */,
 				7D3CBEBC2915946300C224A9 /* SceneDelegate.swift in Sources */,
+				7D847FAB291990AB0009E3F8 /* PasswordModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7D847FA9291990AB0009E3F8 /* PasswordModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7D847FAA291990AB0009E3F8 /* PasswordModel.xcdatamodel */,
+			);
+			currentVersion = 7D847FAA291990AB0009E3F8 /* PasswordModel.xcdatamodel */;
+			path = PasswordModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7D3CBEAE2915946300C224A9 /* Project object */;
 }
