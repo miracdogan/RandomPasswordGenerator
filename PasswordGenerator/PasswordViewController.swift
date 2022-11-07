@@ -17,17 +17,6 @@ class PasswordViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
-        
-        if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
-            if let startWords = try? String(contentsOf: startWordsURL) {
-                allWords = startWords.components(separatedBy: "\n")
-            }
-        }
-        
-        if allWords.isEmpty {
-            allWords = ["silkworm"]
-        }
-
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +27,15 @@ class PasswordViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Word", for: indexPath)
         cell.textLabel?.text = usedWords[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+           self.usedWords.remove(at: indexPath.row)
+           self.tableView.beginUpdates()
+           self.tableView.deleteRows(at: [indexPath], with: .automatic)
+           self.tableView.endUpdates()
+        }
     }
     
     @objc func promptForAnswer() {
@@ -54,7 +52,6 @@ class PasswordViewController: UITableViewController {
         
         ac.addAction(submitAction)
         present(ac, animated: true)
-
     }
     
     func submit(_ answer: String) {
