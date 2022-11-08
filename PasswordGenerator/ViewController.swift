@@ -27,10 +27,8 @@ class ViewController: UIViewController {
         for _ in 0 ..< length {
             password.append(letters.randomElement()!)
         }
-        
         return password
     }
-    
     
     @IBAction func NextPageAction(_ sender: Any) {
         let nameStoryBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -52,4 +50,3 @@ class ViewController: UIViewController {
         present(ac, animated: true)
     }
 }
-
