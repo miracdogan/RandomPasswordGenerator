@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Password Generator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PasswordGenerator" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,71 +16,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Generator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8f-kS-zw5">
-                                <rect key="frame" x="119" y="148" width="155" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fg6-nW-RdY">
-                                <rect key="frame" x="50" y="443.66666666666669" width="293" height="34"/>
+                                <rect key="frame" x="50" y="475" width="293" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ws-mr-era">
-                                <rect key="frame" x="125" y="487.66666666666669" width="74.666666666666686" height="35.000000000000057"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
-                                <color key="tintColor" systemColor="linkColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="Create:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8j0-VE-6Dd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwH-Rm-iwd">
-                                <rect key="frame" x="260" y="443" width="64" height="35"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Copy"/>
-                                <connections>
-                                    <action selector="CopyPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qa-bt-37N"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ten-Bh-MOA">
-                                <rect key="frame" x="207" y="487.66666666666669" width="61" height="35.000000000000057"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                <connections>
-                                    <action selector="NextPageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qhQ-aC-rRu"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="1G2-PM-HbE">
+                                <rect key="frame" x="105" y="519" width="178" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ws-mr-era">
+                                        <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="34.333333333333336"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                        <color key="tintColor" systemColor="linkColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Create"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="Create:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8j0-VE-6Dd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ten-Bh-MOA">
+                                        <rect key="frame" x="92.666666666666657" y="0.0" width="85.333333333333343" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <action selector="NextPageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qhQ-aC-rRu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ten-Bh-MOA" secondAttribute="trailing" constant="125" id="1YM-Bk-RL2"/>
-                            <constraint firstItem="0Ws-mr-era" firstAttribute="top" secondItem="fg6-nW-RdY" secondAttribute="bottom" constant="10" id="6c2-PL-hfb"/>
-                            <constraint firstItem="K8f-kS-zw5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GqO-Jp-0cv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fg6-nW-RdY" secondAttribute="trailing" constant="200" id="Lm7-Wm-Oao"/>
-                            <constraint firstItem="K8f-kS-zw5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="NZ4-cu-uXF"/>
-                            <constraint firstItem="fg6-nW-RdY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OV2-6V-wJ1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fg6-nW-RdY" secondAttribute="trailing" constant="50" id="T5p-vu-pf8"/>
-                            <constraint firstItem="JwH-Rm-iwd" firstAttribute="centerY" secondItem="fg6-nW-RdY" secondAttribute="centerY" id="adT-5v-475"/>
-                            <constraint firstItem="0Ws-mr-era" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="dkJ-sB-gBn"/>
-                            <constraint firstItem="fg6-nW-RdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="j49-Ex-g3w"/>
-                            <constraint firstItem="ten-Bh-MOA" firstAttribute="centerY" secondItem="0Ws-mr-era" secondAttribute="centerY" id="nrW-CB-OQe"/>
-                            <constraint firstItem="JwH-Rm-iwd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="260" id="pBm-mX-dNF"/>
-                            <constraint firstItem="fg6-nW-RdY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zLX-Li-nA2"/>
+                            <constraint firstItem="1G2-PM-HbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="2Ib-gD-Mpi"/>
+                            <constraint firstItem="fg6-nW-RdY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="320" id="AA0-No-2Xk"/>
+                            <constraint firstItem="fg6-nW-RdY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GhI-Y5-8HP"/>
+                            <constraint firstItem="fg6-nW-RdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="TuL-qC-78F"/>
+                            <constraint firstItem="1G2-PM-HbE" firstAttribute="top" secondItem="fg6-nW-RdY" secondAttribute="bottom" constant="10" id="lK9-cx-VyS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1G2-PM-HbE" secondAttribute="trailing" constant="110" id="sSY-3C-3WI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fg6-nW-RdY" secondAttribute="trailing" constant="50" id="wnJ-7b-q5q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jRI-F5-2Rk"/>
+                    <navigationItem key="navigationItem" title="Password Generator" id="jRI-F5-2Rk"/>
                     <connections>
-                        <outlet property="CopyButton" destination="JwH-Rm-iwd" id="Idm-C6-Uqz"/>
                         <outlet property="textView" destination="fg6-nW-RdY" id="HlA-eu-mHC"/>
                     </connections>
                 </viewController>
@@ -88,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
         </scene>
-        <!--Password View Controller-->
+        <!--Password List-->
         <scene sceneID="qs2-pX-NId">
             <objects>
-                <tableViewController storyboardIdentifier="PasswordViewController" id="kMv-VS-16m" customClass="PasswordViewController" customModule="PasswordGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PasswordViewController" title="Password List" id="kMv-VS-16m" customClass="PasswordViewController" customModule="PasswordGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="soO-0v-d59">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,8 +116,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T8i-Rw-Owc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rFt-fa-mY0">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rFt-fa-mY0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
