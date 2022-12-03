@@ -18,22 +18,22 @@ class PasswordViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "listItem") else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = passwordList[indexPath.row]
+        cell.textLabel?.text = passwordList[indexPath.row].value(forKey: "item") as? String
         return cell
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            deleteItem(index: indexPath.row)
             self.passwordList.remove(at: indexPath.row)
-            self.tableView.beginUpdates()
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.tableView.endUpdates()
+            self.tableView.reloadData()
         }
     }
     
     @IBOutlet weak var shoppingTableView: UITableView!
     
-    var passwordList = [String]()
+    var passwordList: [NSManagedObject] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
@@ -58,7 +58,19 @@ class PasswordViewController: UITableViewController {
             print("Item can't be created: \(error.localizedDescription)")
         }
     }
+    
+    func deleteItem(index: Int){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        managedContext.delete(passwordList[index])
 
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Error While Deleting Note: \(error.userInfo)")
+        }
+    }
     func fetchItems(){
         passwordList.removeAll()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -69,11 +81,8 @@ class PasswordViewController: UITableViewController {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PasswordModel")
         do {
             let fetchResults = try managedContext.fetch(fetchRequest)
-            for item in fetchResults as! [NSManagedObject]{
-                passwordList.append(item.value(forKey: "item") as! String)
-            }
+            passwordList = fetchResults as! [NSManagedObject]
             shoppingTableView.reloadData()
-            
         } catch let error{
             print(error.localizedDescription)
         }
